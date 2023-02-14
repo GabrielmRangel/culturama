@@ -1,15 +1,32 @@
 .banner{
     display: grid;
     gap: 1rem;
+    column-gap: 1.2rem;
 }
 
 .banner img:nth-child(1){
-    grid-column: 1 / 3;
+    grid-column: 1/3;
 }
 
 .banner img:nth-child(4){
-    grid-column: 2 / 3;
-    grid-row: 2 / 4;
+    grid-column: 2/3;
+    grid-row: 2/4;
+}
+
+/* Agenda */
+.agenda__item img{
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.agenda__informacoes{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding: 0 10px;
+}
+
+.agenda__item{
+    display: grid;
 }
 
 @media screen and (min-width: 720px) {
@@ -22,4 +39,8 @@
         grid-column: 3/4;
         grid-row: 1/3;
     }
+}
+
+@media screen and (min-width: 1440px) {
+    
 }
