@@ -13,7 +13,45 @@
     grid-row: 2/4;
 }
 
+/* Eventos */
+.eventos__item{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto repeat(2, 1fr) auto;
+    grid-template-areas: 
+    "imagem imagem"
+    "nome nome"
+    "data data"
+    "local botao";
+}
+
+.eventos__item img{
+    grid-area: imagem;
+}
+
+.eventos__item h3{
+    grid-area: nome;
+    align-self: center;
+}
+
+.eventos__item h4{
+    grid-area: data;
+}
+
+.eventos__item h5{
+    grid-area: local;
+    align-self: end;
+}
+
+.eventos__item button{
+    grid-area: botao;
+}
+
 /* Agenda */
+.agenda__item{
+    display: grid;
+}
+
 .agenda__item img{
     grid-column: 1/3;
     grid-row: 1/2;
@@ -25,11 +63,12 @@
     padding: 0 10px;
 }
 
-.agenda__item{
-    display: grid;
-}
-
 @media screen and (min-width: 720px) {
+    .banner{
+        grid-template-columns: calc(50% - 0.75rem) auto auto;
+        column-gap: 1.5rem;
+    }
+
     .banner img:nth-child(1){
         grid-column: 1/2;
         grid-row: 1/3;
@@ -42,5 +81,31 @@
 }
 
 @media screen and (min-width: 1440px) {
+    .categorias{
+        display: grid;
+        grid-template-columns: calc(50% - 0.75rem);
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+        "titulo titulo"
+        "lista destaque"
+        "lista imagem";
+        row-gap: 1rem;
+        column-gap: 1.5rem;
+    }
+
+    .categorias__titulo {
+        grid-area: titulo;
+    }
     
+    .categorias__lista {
+        grid-area: lista;
+    }
+    
+    .categorias__destaques {
+        grid-area: destaque;
+    }
+    
+    .categorias__imagem {
+        grid-area: imagem;
+    }
 }
